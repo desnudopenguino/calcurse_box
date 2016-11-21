@@ -1,0 +1,3 @@
+#!/bin/ksh
+
+cc_box_get.expect `whoami`

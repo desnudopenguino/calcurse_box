@@ -1,0 +1,15 @@
+#!/usr/local/bin/expect -f
+
+set username [lindex $argv 0]
+
+spawn cadaver https://dav.box.com/dav
+expect "dav:/dav/>"
+send "lcd /home/$username/.calcurse\n"
+expect "dav:/dav/>"
+send "cd .calcurse\n"
+expect "dav:/dav/.calcurse/>"
+send "put apts\n"
+expect "dav:/dav/.calcurse/>"
+send "put todo\n"
+expect "dav:/dav/.calcurse/>"
+send "quit\n"
