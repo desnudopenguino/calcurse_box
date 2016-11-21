@@ -1,0 +1,7 @@
+#!/usr/local/bin/expect -f
+
+spawn cadaver https://dav.box.com/dav
+expect "dav:/dav/>"
+send "mkdir .calcurse\n"
+expect "dav:/dav/>"
+send "quit\n"
