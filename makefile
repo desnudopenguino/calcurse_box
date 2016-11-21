@@ -6,8 +6,11 @@ all:
 	@if [[ -z `whereis cadaver` ]]; then pkg_add cadaver; fi
 	@if [[ -z `whereis expect` ]]; then pkg_add expect; fi
 	@echo "Moving scripts to /usr/local/bin ..."
-	@cp src/cc_* /usr/local/bin/
+	@cp src/cc_box_put.expect /usr/local/bin/
+	@cp src/cc_box_get.expect /usr/local/bin/
 	@cp src/calc* /usr/local/bin/
+	@echo "Setting up Box directory structure"
+	@src/cc_box_setup.expect
 	@echo "Done!"
 
 update:
